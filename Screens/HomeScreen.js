@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity, SearchBar} from 'react-native';
+import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity} from 'react-native';
 import Constants from 'expo-constants';
 import { useFonts, 
     Montserrat_400Regular,
@@ -13,7 +13,7 @@ import { useFonts,
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
-export default function NewList({ navigation }) {
+export default function HomeScreen({ navigation }) {
    let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
@@ -27,52 +27,45 @@ export default function NewList({ navigation }) {
     return null;
   }
   
+  
   return (
     <View style={styles.container}>
       <View style={styles.headContainer}>
         <Text style={styles.title}>
-          Create List
+          GrocerMate
         </Text>
       </View>
 
+      <View style={styles.imageContainer}>
+        <Image 
+        style={{
+          resizeMode: 'contain',
+          height: deviceHeight/2.5,
+          width: deviceWidth/2.5
+        }}
+        source={require('/assets/Icons/avocado.png')   } />
+      </View>
 
       <View style={styles.buttonContainer}>
-        <Text style={styles.labelText}>
-          Name:
-        </Text>
-        <TouchableOpacity style={styles.searchbar}>
-          <Text style={styles.searchbarText}>
-            Enter Name
-          </Text>
-        </TouchableOpacity>
-
-        <Text style={styles.labelText}>
-          Location:
-        </Text>
-        <TouchableOpacity style={styles.searchbar}>
-          <Text style={styles.searchbarText}>
-            Search Stores
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate("homescreen")} style={styles.orangeButton}>
-          <Image source={require('./assets/Icons/gold-x.png')}
+       
+        <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+         activeOpacity={0.5}>
+          <Image source={require('/assets/Icons/pink-add.png')}
                  style={styles.imageIcon}
           />
+              <Text style={styles.buttonText}>New List</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate("MainList")} style={styles.orangeButton}>
-          <Image source={require('./assets/Icons/gold-check.png')}
+        <TouchableOpacity onPress={() => navigation.navigate("MyLists")} style={styles.button}
+        activeOpacity={0.5}>
+          <Image source={require('/assets/Icons/notes-icon.png')}
                  style={styles.imageIcon}
           />
+              <Text style={styles.buttonText}>My Lists</Text>
         </TouchableOpacity>
       </View>
-
     </View>
   );
-
-
-
 }
 /*
 blue: #374B4A
@@ -152,30 +145,5 @@ const styles = StyleSheet.create({
       fontSize: 20,
       color: '#F1785D'
   },
-  orangeButton: {
-    width: deviceWidth / 5,
-    height: deviceHeight/ 10,
-    borderRadius: 20,
-    backgroundColor: '#F1785D',
-  },
-  searchbar: {
-      width:deviceWidth - 20,
-      height: deviceHeight / 18,
-     
-      borderRadius: 30,
-      backgroundColor: '#F5F5DC',
-      
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: 20,
-  },
-  labelText: {
-    fontSize: 20,
-    color: '#285238',
-    alignItems: 'left',
-  },
-  searchbarText: {
-    color: '#374B4A',
-    fontSize: 20,
-  }
+
 });
