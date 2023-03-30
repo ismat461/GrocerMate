@@ -66,9 +66,12 @@ export default function NewList({ navigation }) {
       <NameInput></NameInput>
 
 
-      <Text style={styles.labelText}>Your list is currently empty!</Text>
+      
 
       <View style={styles.buttonContainer}>
+
+        <Text style={styles.labelText}>Your list is currently empty!</Text>
+
         <TouchableOpacity
           onPress={() => navigation.navigate('SearchScreen')}
           style={styles.button}>
@@ -78,6 +81,15 @@ export default function NewList({ navigation }) {
             style={styles.smallIcon}
           />
         </TouchableOpacity>
+      </View>
+
+      <View style={styles.grandTotalContainer}>
+        <Text style={styles.grandText}>
+          Grand Total:
+        </Text>
+        <Text style={styles.grandTextBold}>
+          $0.00
+        </Text>
       </View>
     </View>
   );
@@ -155,11 +167,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     height: deviceHeight / 2.5,
-    width: deviceWidth / 3,
     left: 0,
     right: 0,
-    top: deviceHeight / 15,
+    top: -deviceHeight / 10,
     alignItems: 'center',
+    justifyContent: 'center'
   },
   button: {
     width: deviceWidth / 2,
@@ -173,14 +185,14 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonText: {
-    fontSize: 25,
+    fontSize: 30,
     color: '#F8D677',
     padding: 10,
   },
   labelText: {
     fontSize: 20,
     color: '#F5F5DC',
-    alignItems: 'center',
+    marginBottom: 10,
   },
   //deviceHeight: 728.9
   //deviceWidth: 392.72
@@ -220,6 +232,34 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     textAlign: 'left',
-    //justifyContent: 'space-between',
+    justifyContent: 'center',
+  },
+  grandTotalContainer: {
+    height: deviceHeight/15,
+    width: deviceHeight/3,
+    //backgroundColor: '#285238',
+    backgroundColor: '#F5F5DC',
+    fontSize: 20,
+    borderRadius: 30,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    top: deviceHeight/10,
+    flexDirection: 'row',
+    padding:5,
+  },
+  grandText: {
+    fontSize: 18,
+
+    textAlign: 'center',
+    fontFamily: 'Montserrat_400Regular',
+    color: '#374B4A',
+    //backgroundColor: '#285238',
+  },
+  grandTextBold: {
+    fontSize: 25,
+    textAlign: 'center',
+    fontFamily: 'Montserrat_700Bold',
+    color: '#374B4A',
+    //backgroundColor: '#285238',
   },
 });
