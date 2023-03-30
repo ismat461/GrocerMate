@@ -97,7 +97,10 @@ class NameInput extends Component {
           placeholder="New List 1"
           onChangeText={(text) => this.setState({ text })}
         />
-
+      <Image
+            source={require('/workspaces/GrocerMate/assets/Icons/gold-pencil.png')}
+            style={styles.smallIcon}
+      />
       </View>
     );
   }
@@ -119,18 +122,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5DC',
     fontSize: 20,
     borderRadius: 30,
-    padding: 20,
+    //padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: 'Montserrat_400Regular',
     //left: 0,
     //right: 0,
     top: -deviceHeight/5,
+    flexDirection: 'row',
   },
   textInput: {
     fontSize: 30,
     height: deviceHeight/15,
-    width: deviceWidth/1.5,
+    width: deviceWidth/1.75,
     textAlign: 'center',
     fontFamily: 'Montserrat_400Regular',
     color: '#374B4A',
@@ -143,11 +147,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#B4CC9B',
   },
   paragraph: {
-    margin: 10,
     fontSize: 18,
-    textAlign: 'center',
     color: '#374B4A',
     fontFamily: 'Montserrat_400Regular',
+    paddingLeft: 5,
+    paddingRight: 25,
   },
   buttonContainer: {
     height: deviceHeight / 2.5,
@@ -215,6 +219,7 @@ const styles = StyleSheet.create({
     top: -deviceHeight/6.5,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    textAlign: 'left',
+    //justifyContent: 'space-between',
   },
 });
