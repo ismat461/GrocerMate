@@ -97,6 +97,7 @@ class NameInput extends Component {
           placeholder="New List 1"
           onChangeText={(text) => this.setState({ text })}
         />
+
       </View>
     );
   }
@@ -112,8 +113,8 @@ pink-salmon: #F1785D
 */
 const styles = StyleSheet.create({
   textInputBox: {
-    height: deviceHeight/10,
-    width: deviceHeight/3,
+    height: deviceHeight/15,
+    width: deviceHeight/2.5,
     //backgroundColor: '#285238',
     backgroundColor: '#F5F5DC',
     fontSize: 20,
@@ -128,8 +129,12 @@ const styles = StyleSheet.create({
   },
   textInput: {
     fontSize: 30,
+    height: deviceHeight/15,
+    width: deviceWidth/1.5,
+    textAlign: 'center',
     fontFamily: 'Montserrat_400Regular',
-    color: '#374B4A'
+    color: '#374B4A',
+    //backgroundColor: '#285238',
   },
   container: {
     flex: 1,
@@ -198,7 +203,7 @@ const styles = StyleSheet.create({
     margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    right: -120,
+    right: -deviceWidth/2.5,
     top: -deviceHeight/4.5,
   },
   locationBar: {
@@ -207,7 +212,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5DC',
     borderRadius: 30,
     left: -deviceWidth/3.5,
-    top: -deviceHeight/6,
+    top: -deviceHeight/6.5,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
