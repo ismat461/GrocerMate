@@ -1,20 +1,31 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity, SearchBar} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Dimensions,
+  Image,
+  TouchableOpacity,
+  TextInput
+} from 'react-native';
 import Constants from 'expo-constants';
-import { useFonts, 
-    Montserrat_400Regular,
-    Montserrat_500Medium,
-    Montserrat_600SemiBold,
-    Montserrat_700Bold,
-    Montserrat_800ExtraBold,
-    Montserrat_900Black,} 
-    from '@expo-google-fonts/montserrat';
+import {
+  useFonts,
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold,
+  Montserrat_800ExtraBold,
+  Montserrat_900Black,
+} from '@expo-google-fonts/montserrat';
+import { Component } from 'react';
+
 
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
 export default function NewList({ navigation }) {
-   let [fontsLoaded] = useFonts({
+  let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
     Montserrat_600SemiBold,
@@ -26,54 +37,71 @@ export default function NewList({ navigation }) {
   if (!fontsLoaded) {
     return null;
   }
-  
+
   return (
     <View style={styles.container}>
-      <View style={styles.headContainer}>
-        <Text style={styles.title}>
-          Create List
-        </Text>
-      </View>
+      <TouchableOpacity style={styles.locationBar}>
+        <Image
+        // /workspaces/GrocerMate/assets/Icons/house-icon-gold.png
+          source={require('/workspaces/GrocerMate/assets/Icons/pink-map.png')}
+          style={styles.tinyIcon}
+        />
 
+        <Text style={styles.paragraph}>Acme</Text>
+
+        <Image
+          source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
+          style={styles.tinyIcon}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('homescreen')}
+        style={styles.homeButton}>
+        <Image
+          source={require('/workspaces/GrocerMate/assets/Icons/house-icon-gold.png')}
+          style={styles.smallIcon}
+        />
+      </TouchableOpacity>
+
+      <NameInput></NameInput>
+
+
+      <Text style={styles.labelText}>Your list is currently empty!</Text>
 
       <View style={styles.buttonContainer}>
-        <Text style={styles.labelText}>
-          Name:
-        </Text>
-        <TouchableOpacity style={styles.searchbar}>
-          <Text style={styles.searchbarText}>
-            Enter Name
-          </Text>
-        </TouchableOpacity>
-
-        <Text style={styles.labelText}>
-          Location:
-        </Text>
-        <TouchableOpacity style={styles.searchbar}>
-          <Text style={styles.searchbarText}>
-            Search Stores
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate("homescreen")} style={styles.orangeButton}>
-          <Image source={require('/workspaces/GrocerMate/assets/Icons/gold-x.png')}
-                 style={styles.imageIcon}
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate("MainList")} style={styles.orangeButton}>
-          <Image source={require('/workspaces/GrocerMate/assets/Icons/gold-check.png')}
-                 style={styles.imageIcon}
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SearchScreen')}
+          style={styles.button}>
+          <Text style={styles.buttonText}>Add Items</Text>
+          <Image
+            source={require('/workspaces/GrocerMate/assets/Icons/gold-add.png')}
+            style={styles.smallIcon}
           />
         </TouchableOpacity>
       </View>
-
     </View>
   );
-
-
-
 }
+
+class NameInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
+
+  render() {
+    return (
+      <View style={styles.textInputBox}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="New List 1"
+          onChangeText={(text) => this.setState({ text })}
+        />
+      </View>
+    );
+  }
+}
+
 /*
 blue: #374B4A
 dark green: #285238
@@ -83,99 +111,98 @@ orange: #F8D677
 pink-salmon: #F1785D
 */
 const styles = StyleSheet.create({
+  textInputBox: {
+    height: 40,
+    width: deviceWidth - 60,
+    backgroundColor: '#F5F5DC',
+    fontSize: 20,
+    borderRadius: 30,
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontFamily: 'Montserrat_400Regular',
+    top: -100,
+  },
+  textInput: {
+    fontSize: 30,
+    fontFamily: 'Montserrat_400Regular',
+    color: '#374B4A'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: '#B4CC9B',
-    padding: 8,
   },
   paragraph: {
-    margin: 24,
+    margin: 10,
     fontSize: 18,
-    fontWeight: 'bold',
     textAlign: 'center',
-  },
-  title: {
+    color: '#374B4A',
     fontFamily: 'Montserrat_400Regular',
-    fontSize: 50,
-    color: '#285238',
-    textAlign: 'center'
-  },
-  headContainer: {
-    height: deviceHeight/9,
-    justifyContent:"center",
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: deviceHeight/12,
-  },
-  imageContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    //backgroundColor: '#000000',
-    position: 'absolute',
-    height: deviceHeight/4,
-    width : deviceWidth,
-    left: 0,
-    right: 0,
-    top: deviceHeight/5,
-  },
-  imageIcon: {
-    height: deviceHeight/10,
-    width: deviceWidth/5,
-    resizeMode: 'contain',
   },
   buttonContainer: {
-    height: deviceHeight/2.5,
-    width: deviceWidth/3,
-    //backgroundColor: '#000000',
+    height: deviceHeight / 2.5,
+    width: deviceWidth / 3,
     left: 0,
     right: 0,
-    top: deviceHeight/7,
-    //justifyContent: 'space-between',
+    top: deviceHeight / 15,
     alignItems: 'center',
   },
   button: {
-      width:deviceWidth / 2.5,
-      height: deviceHeight / 5.5,
-     
-      borderRadius: 30,
-      backgroundColor: '#F5F5DC',
-      
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: 20,
+    width: deviceWidth / 2,
+    height: deviceHeight / 6,
+
+    borderRadius: 30,
+    backgroundColor: '#F1785D',
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 10,
   },
   buttonText: {
-      fontSize: 20,
-      color: '#F1785D'
-  },
-  orangeButton: {
-    width: deviceWidth / 5,
-    height: deviceHeight/ 10,
-    borderRadius: 20,
-    backgroundColor: '#F1785D',
-  },
-  searchbar: {
-      width:deviceWidth - 20,
-      height: deviceHeight / 18,
-     
-      borderRadius: 30,
-      backgroundColor: '#F5F5DC',
-      
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin: 20,
+    fontSize: 25,
+    color: '#F8D677',
+    padding: 10,
   },
   labelText: {
     fontSize: 20,
-    color: '#285238',
-    alignItems: 'left',
+    color: '#F5F5DC',
+    alignItems: 'center',
   },
-  searchbarText: {
-    color: '#374B4A',
-    fontSize: 20,
-  }
+  smallIcon: {
+    height: 30,
+    width: 30,
+    resizeMode: 'contain',
+    justifyContent: 'center',
+  },
+  tinyIcon: {
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+    justifyContent: 'center',
+  },
+  homeButton: {
+    borderRadius: 15,
+    backgroundColor: '#F1785D',
+    height: 40,
+    width: 40,
+    resizeMode: 'contain',
+    margin: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: -120,
+    top: -115,
+  },
+  locationBar: {
+    height: 30,
+    width: 140,
+    backgroundColor: '#F5F5DC',
+    borderRadius: 30,
+    left: -90,
+    top: -70,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
 });
