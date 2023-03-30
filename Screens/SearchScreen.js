@@ -112,8 +112,23 @@ pink-salmon: #F1785D
 */
 const styles = StyleSheet.create({
   textInputBox: {
+    height: deviceHeight/10,
+    width: deviceHeight/3,
+    backgroundColor: '#285238',
+    //backgroundColor: '#F5F5DC',
+    fontSize: 20,
+    borderRadius: 30,
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontFamily: 'Montserrat_400Regular',
+    left: 0,
+    right: 0,
+    top: 0,
+  },
+  grandTotalContainer: {
     height: 40,
-    width: deviceWidth - 60,
+    width: deviceWidth /3,
     backgroundColor: '#F5F5DC',
     fontSize: 20,
     borderRadius: 30,
