@@ -43,14 +43,14 @@ export default function HomeScreen({ navigation }) {
           height: deviceHeight/2.5,
           width: deviceWidth/2.5
         }}
-        source={require('/assets/Icons/avocado.png')   } />
+        source={require('/workspaces/GrocerMate/assets/Icons/avocado.png')   } />
       </View>
 
       <View style={styles.buttonContainer}>
        
         <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
          activeOpacity={0.5}>
-          <Image source={require('/assets/Icons/pink-add.png')}
+          <Image source={require('/workspaces/GrocerMate/assets/Icons/pink-add.png')}
                  style={styles.imageIcon}
           />
               <Text style={styles.buttonText}>New List</Text>
@@ -58,7 +58,7 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity onPress={() => navigation.navigate("MyLists")} style={styles.button}
         activeOpacity={0.5}>
-          <Image source={require('/assets/Icons/notes-icon.png')}
+          <Image source={require('/workspaces/GrocerMate/assets/Icons/notes-icon.png')}
                  style={styles.imageIcon}
           />
               <Text style={styles.buttonText}>My Lists</Text>

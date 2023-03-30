@@ -56,13 +56,13 @@ export default function NewList({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate("homescreen")} style={styles.orangeButton}>
-          <Image source={require('/assets/Icons/gold-x.png')}
+          <Image source={require('/workspaces/GrocerMate/assets/Icons/gold-x.png')}
                  style={styles.imageIcon}
           />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate("MainList")} style={styles.orangeButton}>
-          <Image source={require('/assets/Icons/gold-check.png')}
+          <Image source={require('/workspaces/GrocerMate/assets/Icons/gold-check.png')}
                  style={styles.imageIcon}
           />
         </TouchableOpacity>
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   labelText: {
     fontSize: 20,
     color: '#285238',
-    alignItems: 'left',
+    alignItems: 'center',
   },
   searchbarText: {
     color: '#374B4A',

@@ -3,13 +3,13 @@ import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity} from 'reac
 import Constants from 'expo-constants';
 import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "/Screens/HomeScreen";
-import NewList from "/Screens/NewList";
-import MyLists from "/Screens/MyLists";
-import MainList from "/Screens/MainList";
-import SearchScreen from "/Screens/SearchScreen";
+import HomeScreen from "./Screens/HomeScreen";
+import NewList from "./Screens/NewList";
+import MyLists from "./Screens/MyLists";
+import MainList from "./Screens/MainList";
+import SearchScreen from "./Screens/SearchScreen";
 
-
+// /workspaces/GrocerMate/Screens/HomeScreen.js
 
 const Stack = createNativeStackNavigator();
 

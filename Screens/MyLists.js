@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   labelText: {
     fontSize: 20,
     color: '#285238',
-    alignItems: 'left',
+    alignItems: 'center',
   },
   searchbarText: {
     color: '#374B4A',
