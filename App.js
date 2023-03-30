@@ -1,6 +1,4 @@
 //import * as React from 'react';
-// baha
-
 import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity} from 'react-native';
 import Constants from 'expo-constants';
 import { NavigationContainer} from "@react-navigation/native";
@@ -9,6 +7,8 @@ import HomeScreen from "/Screens/HomeScreen";
 import NewList from "/Screens/NewList";
 import MyLists from "/Screens/MyLists";
 import MainList from "/Screens/MainList";
+import SearchScreen from "/Screens/SearchScreen";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -34,6 +34,10 @@ export default function App() {
         <Stack.Screen
           name="MainList"
           component={MainList}
+        />
+        <Stack.Screen
+          name="SearchScreen"
+          component={SearchScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
