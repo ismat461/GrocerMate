@@ -59,44 +59,17 @@ export default function NewList({ navigation }) {
           />
         </TouchableOpacity>
       </View>
-
-
-
-
-
-
-      
-
-    
-
-
-
-      <TouchableOpacity
-        onPress={() => navigation.navigate('homescreen')}
-        style={styles.homeButton}>
-        <Image
-          source={require('/workspaces/GrocerMate/assets/Icons/house-icon-gold.png')}
-          style={styles.smallIcon}
-        />
-      </TouchableOpacity>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>
+          Search By Category
+        </Text>
+      </View>
 
       <NameInput></NameInput>
-
-
-      
 
       <View style={styles.buttonContainer}>
 
         <Text style={styles.labelText}>SEARCH SCREEN</Text>
-      </View>
-
-      <View style={styles.grandTotalContainer}>
-        <Text style={styles.grandText}>
-          Grand Total:
-        </Text>
-        <Text style={styles.grandTextBold}>
-          $0.00
-        </Text>
       </View>
     </View>
   );
@@ -117,7 +90,7 @@ class NameInput extends Component {
           onChangeText={(text) => this.setState({ text })}
         />
       <Image
-            source={require('/workspaces/GrocerMate/assets/Icons/gold-pencil.png')}
+            source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
             style={styles.smallIcon}
       />
       </View>
@@ -138,7 +111,7 @@ const styles = StyleSheet.create({
     height: deviceHeight/15,
     width: deviceWidth/.5,
     //justifyContent: 'space-between',
-    backgroundColor: '#285238',
+    //backgroundColor: '#285238',
     justifyContent: 'space-evenly',
     alignItems:'center',
     top: -deviceHeight/6,
@@ -170,6 +143,16 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     justifyContent: 'center',
   },
+  titleContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: -deviceHeight/20,
+    //backgroundColor: '#285238',
+  },
+  titleText: {
+    fontSize: 24,
+    fontFamily: "Montserrat_400Regular"
+  },
   textInputBox: {
     height: deviceHeight/15,
     width: deviceHeight/2.5,
@@ -185,7 +168,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   textInput: {
-    fontSize: 30,
+    fontSize: 25,
     height: deviceHeight/15,
     width: deviceWidth/1.75,
     textAlign: 'center',
