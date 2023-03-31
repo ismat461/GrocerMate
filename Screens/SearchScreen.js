@@ -68,8 +68,24 @@ export default function NewList({ navigation }) {
       <NameInput></NameInput>
 
       <View style={styles.buttonContainer}>
-
-        <Text style={styles.labelText}>SEARCH SCREEN</Text>
+        <View style={styles.columnContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          activeOpacity={0.5}>
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/fruits-and-vegetables.png')}
+                  style={styles.image}
+            />
+                <Text style={styles.buttonText}>Fruits and Vegetables</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          activeOpacity={0.5}>
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/paper-goods.png')}
+                  style={styles.image}
+            />
+                <Text style={styles.buttonText}>Paper Goods</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.columnContainer}>
+        </View>
       </View>
     </View>
   );
@@ -143,6 +159,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     justifyContent: 'center',
   },
+  image: {
+    height: deviceHeight/6,
+    width:deviceWidth/3,
+    justifyContent:'center',
+    alignSelf:'center',
+  },
   titleContainer: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -184,29 +206,36 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    height: deviceHeight / 2.5,
+    //height: deviceHeight / 2,
     left: 0,
     right: 0,
     top: -deviceHeight / 10,
-    alignItems: 'center',
-    justifyContent: 'center'
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    backgroundColor: '#285238',
+  },
+  columnContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    backgroundColor: "#F8D677",
   },
   button: {
-    width: deviceWidth / 2,
-    height: deviceHeight / 6,
-
+    width:deviceWidth / 2.25,
+    height: deviceHeight / 4.5,
+     
     borderRadius: 30,
-    backgroundColor: '#F1785D',
-
+    backgroundColor: '#F5F5DC',
+      
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 10,
+    //margin: 20,
   },
 
   buttonText: {
-    fontSize: 30,
-    color: '#F8D677',
-    padding: 10,
+    fontSize: 15,
+    fontFamily: 'Montserrat_400Regular',
+    paddingBottom: 5,
+
   },
 
   
