@@ -30,6 +30,14 @@ export default function NewList({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.headContainer}>
+      <TouchableOpacity
+          onPress={() => navigation.navigate('homescreen')}
+          style={styles.homeButton}>
+          <Image
+            source={require('/workspaces/GrocerMate/assets/Icons/house-icon-gold.png')}
+            style={styles.smallIcon}
+          />
+        </TouchableOpacity>
         <Text style={styles.title}>
           My Lists
         </Text>
