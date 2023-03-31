@@ -74,7 +74,7 @@ export default function NewList({ navigation }) {
             <Image source={require('/workspaces/GrocerMate/assets/Icons/fruits-and-vegetables.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Fruits and Vegetables</Text>
+                <Text style={styles.buttonText}>Fruits & Vegetables</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
@@ -83,8 +83,36 @@ export default function NewList({ navigation }) {
             />
                 <Text style={styles.buttonText}>Paper Goods</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          activeOpacity={0.5}>
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/chips.png')}
+                  style={styles.image}
+            />
+                <Text style={styles.buttonText}>Snacks & Candy</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.columnContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          activeOpacity={0.5}>
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/meat-and-seafood.png')}
+                  style={styles.image}
+            />
+                <Text style={styles.buttonText}>Meat & Seafood</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          activeOpacity={0.5}>
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/milk-and-cheese.png')}
+                  style={styles.image}
+            />
+                <Text style={styles.buttonText}>Dairy & Eggs</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          activeOpacity={0.5}>
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/bread-and-bakery.png')}
+                  style={styles.image}
+            />
+                <Text style={styles.buttonText}>Bread & Bakery</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -151,19 +179,15 @@ const styles = StyleSheet.create({
     height: deviceHeight/19,
     width: deviceWidth/15,
     resizeMode: 'contain',
-    justifyContent: 'center',
   },
   smallIcon: {
     height: deviceHeight/20,
     width: deviceWidth/20,
     resizeMode: 'contain',
-    justifyContent: 'center',
   },
   image: {
     height: deviceHeight/6,
     width:deviceWidth/3,
-    justifyContent:'center',
-    alignSelf:'center',
   },
   titleContainer: {
     justifyContent: 'center',
@@ -206,21 +230,24 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    //height: deviceHeight / 2,
-    left: 0,
-    right: 0,
-    top: -deviceHeight / 10,
+    height: deviceHeight/2,
+    width: deviceWidth,
+    top: -deviceHeight / 8,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     //alignItems: 'center',
-    //justifyContent: 'center',
-    backgroundColor: '#285238',
+    //backgroundColor: '#285238',
   },
   columnContainer: {
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    backgroundColor: "#F8D677",
+    justifyContent: 'space-between',
+    //top: deviceHeight/20,
+    //height: deviceHeight/2,
+    width: deviceWidth/2.5,
+    //backgroundColor: "#F8D677",
   },
   button: {
-    width:deviceWidth / 2.25,
+    width:deviceWidth / 2.5,
     height: deviceHeight / 4.5,
      
     borderRadius: 30,
@@ -228,13 +255,13 @@ const styles = StyleSheet.create({
       
     alignItems: 'center',
     justifyContent: 'center',
-    //margin: 20,
+    marginTop: 25,
   },
 
   buttonText: {
     fontSize: 15,
     fontFamily: 'Montserrat_400Regular',
-    paddingBottom: 5,
+    //paddingBottom: 2,
 
   },
 
