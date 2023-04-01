@@ -60,21 +60,20 @@ export default function SearchScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.textInputBox}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Search Products"
-          onChangeText={(text) => this.setState({ text })}
-        />
+      
+        <NameInput></NameInput>
+        <View style={styles.smallIcon}>
         <TouchableOpacity onPress={() => navigation.navigate("AppleSearch")} style={styles.smallIcon}
-         activeOpacity={0.5}
-        >
-          <Image
-                source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
-                style={styles.smallIcon}
-          />
+          activeOpacity={0.5}
+          >
+            <Image
+                  source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
+                  style={styles.smallIcon}
+            />
         </TouchableOpacity>
       </View>
+      
+
 
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>
@@ -150,14 +149,7 @@ class NameInput extends Component {
           placeholder="Search Products"
           onChangeText={(text) => this.setState({ text })}
         />
-        <TouchableOpacity onPress={() => navigation.navigate("AppleSearch")} style={styles.smallIcon}
-         activeOpacity={0.5}
-        >
-          <Image
-                source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
-                style={styles.smallIcon}
-          />
-        </TouchableOpacity>
+        
       </View>
     );
   }
@@ -205,6 +197,8 @@ const styles = StyleSheet.create({
     height: deviceHeight/20,
     width: deviceWidth/20,
     resizeMode: 'contain',
+    top: -deviceHeight/16.5,
+    right: -deviceWidth/10,
   },
   image: {
     height: deviceHeight/6,

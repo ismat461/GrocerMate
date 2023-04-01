@@ -42,7 +42,7 @@ export default function NewList({ navigation }) {
     <View style={styles.container}>
       <View style={styles.pinkButtonContainer}>
         <TouchableOpacity 
-        style={styles.pinkButton} onPress={() => navigation.navigate('MainList')}>
+        style={styles.pinkButton} onPress={() => navigation.navigate('SearchScreen')}>
           <Image
             source={require('/workspaces/GrocerMate/assets/Icons/gold-back-sign.png')}
             style={styles.largeIcon}
