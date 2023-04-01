@@ -71,47 +71,47 @@ export default function NewList({ navigation }) {
         <View style={styles.columnContainer}>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/fruits-and-vegetables.png')}
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/red-delicious1.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Fruits & Vegetables</Text>
+                <Text style={styles.buttonText}>Red Delicious</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/paper-goods.png')}
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/granny-smith2.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Paper Goods</Text>
+                <Text style={styles.buttonText}>Granny Smith</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/chips.png')}
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/macintosh3.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Snacks & Candy</Text>
+                <Text style={styles.buttonText}>Macintosh</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.columnContainer}>
         <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/meat-and-seafood.png')}
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/honey-crisp4.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Meat & Seafood</Text>
+                <Text style={styles.buttonText}>Honey Crisp</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/milk-and-cheese.png')}
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/pink-lady5.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Dairy & Eggs</Text>
+                <Text style={styles.buttonText}>Pink Lady</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/bread-and-bakery.png')}
+            <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/gala6.png')}
                   style={styles.image}
             />
-                <Text style={styles.buttonText}>Bread & Bakery</Text>
+                <Text style={styles.buttonText}>Gala</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -130,7 +130,7 @@ class NameInput extends Component {
       <View style={styles.textInputBox}>
         <TextInput
           style={styles.textInput}
-          placeholder="Search Products"
+          placeholder="Apples"
           onChangeText={(text) => this.setState({ text })}
         />
       <Image

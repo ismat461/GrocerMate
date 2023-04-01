@@ -24,7 +24,7 @@ import { Component } from 'react';
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
-export default function NewList({ navigation }) {
+export default function SearchScreen({ navigation }) {
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
@@ -59,13 +59,30 @@ export default function NewList({ navigation }) {
           />
         </TouchableOpacity>
       </View>
+
+      <View style={styles.textInputBox}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Search Products"
+          onChangeText={(text) => this.setState({ text })}
+        />
+        <TouchableOpacity onPress={() => navigation.navigate("AppleSearch")} style={styles.smallIcon}
+         activeOpacity={0.5}
+        >
+          <Image
+                source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
+                style={styles.smallIcon}
+          />
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>
           Search By Category
         </Text>
       </View>
 
-      <NameInput></NameInput>
+      
 
       <View style={styles.buttonContainer}>
         <View style={styles.columnContainer}>
@@ -133,10 +150,14 @@ class NameInput extends Component {
           placeholder="Search Products"
           onChangeText={(text) => this.setState({ text })}
         />
-      <Image
-            source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
-            style={styles.smallIcon}
-      />
+        <TouchableOpacity onPress={() => navigation.navigate("AppleSearch")} style={styles.smallIcon}
+         activeOpacity={0.5}
+        >
+          <Image
+                source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
+                style={styles.smallIcon}
+          />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -192,7 +213,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    top: -deviceHeight/20,
+    top: -deviceHeight/9,
     //backgroundColor: '#285238',
   },
   titleText: {
@@ -210,7 +231,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontFamily: 'Montserrat_400Regular',
 
-    top: -deviceHeight/5,
+    top: -deviceHeight/8,
     flexDirection: 'row',
   },
   textInput: {

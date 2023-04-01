@@ -8,8 +8,8 @@ import NewList from "./Screens/NewList";
 import MyLists from "./Screens/MyLists";
 import MainList from "./Screens/MainList";
 import SearchScreen from "./Screens/SearchScreen";
-import SearchScreen from "./Screens/AppleSearch";
-import SearchScreen from "./Screens/Checkout";
+import AppleSearch from "./Screens/AppleSearch";
+import Checkout from "./Screens/Checkout";
 
 
 // /workspaces/GrocerMate/Screens/HomeScreen.js
