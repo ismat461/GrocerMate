@@ -264,7 +264,15 @@ const styles = StyleSheet.create({
     //paddingBottom: 2,
 
   },
-
-  
-  
+  filterButton: {
+    backgroundColor: "#F8D677",
+    width: deviceWidth/3,
+    height: deviceHeight/4,
+    borderRadius: 20,
+    justifyContent: 'space-around',
+  },
+  filterText: {
+    fontSize: 20,
+    fontFamily: 'Montserrat_400Regular',
+  }
 });
