@@ -14,6 +14,7 @@ import Checkout from "./Screens/Checkout";
 
 // /workspaces/GrocerMate/Screens/HomeScreen.js
 // TESTING
+// TESTING2
 const Stack = createNativeStackNavigator();
 
 export default function App() {
