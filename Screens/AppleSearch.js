@@ -87,7 +87,7 @@ export default function NewList({ navigation }) {
       
       <View style={styles.buttonContainer}>
         <View style={styles.columnContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
+          <TouchableOpacity onPress={() => navigation.navigate("Checkout")} style={styles.button} 
           activeOpacity={0.5}>
             <Image source={require('/workspaces/GrocerMate/assets/Icons/Apples/red-delicious1.png')}
                   style={styles.image}

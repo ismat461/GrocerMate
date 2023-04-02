@@ -24,7 +24,7 @@ import { Component } from 'react';
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
-export default function NewList({ navigation }) {
+export default function Checkout({ navigation }) {
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
@@ -41,11 +41,18 @@ export default function NewList({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.pinkButtonContainer}>
-        <TouchableOpacity 
-        style={styles.pinkButton} onPress={() => navigation.navigate('MainList')}>
+        <TouchableOpacity style={styles.locationBar}>
           <Image
-            source={require('/workspaces/GrocerMate/assets/Icons/gold-back-sign.png')}
-            style={styles.largeIcon}
+          // /workspaces/GrocerMate/assets/Icons/house-icon-gold.png
+            source={require('/workspaces/GrocerMate/assets/Icons/pink-map.png')}
+            style={styles.tinyIcon}
+          />
+
+          <Text style={styles.paragraph}>Acme</Text>
+
+          <Image
+            source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
+            style={styles.tinyIcon}
           />
         </TouchableOpacity>
 
@@ -59,61 +66,31 @@ export default function NewList({ navigation }) {
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>
-          Search By Category
-        </Text>
-      </View>
+      
 
       <NameInput></NameInput>
 
       <View style={styles.buttonContainer}>
-        <View style={styles.columnContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
-          activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/fruits-and-vegetables.png')}
-                  style={styles.image}
-            />
-                <Text style={styles.buttonText}>Fruits & Vegetables</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
-          activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/paper-goods.png')}
-                  style={styles.image}
-            />
-                <Text style={styles.buttonText}>Paper Goods</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
-          activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/chips.png')}
-                  style={styles.image}
-            />
-                <Text style={styles.buttonText}>Snacks & Candy</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.columnContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
-          activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/meat-and-seafood.png')}
-                  style={styles.image}
-            />
-                <Text style={styles.buttonText}>Meat & Seafood</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
-          activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/milk-and-cheese.png')}
-                  style={styles.image}
-            />
-                <Text style={styles.buttonText}>Dairy & Eggs</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
-          activeOpacity={0.5}>
-            <Image source={require('/workspaces/GrocerMate/assets/Icons/bread-and-bakery.png')}
-                  style={styles.image}
-            />
-                <Text style={styles.buttonText}>Bread & Bakery</Text>
-          </TouchableOpacity>
-        </View>
+
+        <Text style={styles.labelText}>Your list is currently empty!</Text>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SearchScreen')}
+          style={styles.button}>
+          <Text style={styles.buttonText}>Add Items</Text>
+          <Image
+            source={require('/workspaces/GrocerMate/assets/Icons/gold-add.png')}
+            style={styles.smallIcon}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.grandTotalContainer}>
+        <Text style={styles.grandText}>
+          Grand Total:
+        </Text>
+        <Text style={styles.grandTextBold}>
+          $0.00
+        </Text>
       </View>
     </View>
   );
@@ -130,11 +107,11 @@ class NameInput extends Component {
       <View style={styles.textInputBox}>
         <TextInput
           style={styles.textInput}
-          placeholder="Search Products"
+          placeholder="New List 1"
           onChangeText={(text) => this.setState({ text })}
         />
       <Image
-            source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
+            source={require('/workspaces/GrocerMate/assets/Icons/gold-pencil.png')}
             style={styles.smallIcon}
       />
       </View>
@@ -151,6 +128,54 @@ orange: #F8D677
 pink-salmon: #F1785D
 */
 const styles = StyleSheet.create({
+  paragraph: {
+    fontSize: 18,
+    color: '#374B4A',
+    fontFamily: 'Montserrat_400Regular',
+    paddingLeft: 5,
+    paddingRight: 25,
+  },
+  locationBar: {
+    backgroundColor: '#285238',
+    height: deviceHeight/25,
+    width: deviceWidth/3,
+    backgroundColor: '#F5F5DC',
+    borderRadius: 30,
+    left: -deviceWidth/3.5,
+    top: -deviceHeight/6.5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    textAlign: 'left',
+    justifyContent: 'center',
+  },
+  grandTotalContainer: {
+    height: deviceHeight/15,
+    width: deviceHeight/3,
+    //backgroundColor: '#285238',
+    backgroundColor: '#F5F5DC',
+    fontSize: 20,
+    borderRadius: 30,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    top: deviceHeight/10,
+    flexDirection: 'row',
+    padding:5,
+  },
+  grandText: {
+    fontSize: 18,
+
+    textAlign: 'center',
+    fontFamily: 'Montserrat_400Regular',
+    color: '#374B4A',
+    //backgroundColor: '#285238',
+  },
+  grandTextBold: {
+    fontSize: 25,
+    textAlign: 'center',
+    fontFamily: 'Montserrat_700Bold',
+    color: '#374B4A',
+    //backgroundColor: '#285238',
+  },
   pinkButtonContainer: {
     height: deviceHeight/15,
     width: deviceWidth/.5,
@@ -238,14 +263,6 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     //backgroundColor: '#285238',
   },
-  columnContainer: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    //top: deviceHeight/20,
-    //height: deviceHeight/2,
-    width: deviceWidth/2.5,
-    //backgroundColor: "#F8D677",
-  },
   button: {
     width:deviceWidth / 2.5,
     height: deviceHeight / 4.5,
@@ -263,6 +280,20 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat_400Regular',
     //paddingBottom: 2,
 
+  },
+  buttonContainer: {
+    height: deviceHeight / 2.5,
+    left: 0,
+    right: 0,
+    top: -deviceHeight / 10,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  labelText: {
+    fontSize: 20,
+    color: '#F5F5DC',
+    marginBottom: 10,
   },
 
   
