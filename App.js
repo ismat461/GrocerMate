@@ -15,7 +15,7 @@ import Checkout from "./Screens/Checkout";
 // /workspaces/GrocerMate/Screens/HomeScreen.js
 
 const Stack = createNativeStackNavigator();
-
+// Sara
 export default function App() {
   return (
     <NavigationContainer>
