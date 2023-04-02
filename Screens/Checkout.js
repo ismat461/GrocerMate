@@ -70,9 +70,11 @@ export default function Checkout({ navigation }) {
 
       <NameInput></NameInput>
 
-      <View style={styles.buttonContainer}>
+      <View style = {styles.cart}>
 
-        <Text style={styles.labelText}>Your list is currently empty!</Text>
+      </View>
+
+      <View style={styles.buttonContainer}>
 
         <TouchableOpacity
           onPress={() => navigation.navigate('SearchScreen')}
@@ -183,7 +185,7 @@ const styles = StyleSheet.create({
     //backgroundColor: '#285238',
     justifyContent: 'space-evenly',
     alignItems:'center',
-    top: -deviceHeight/6,
+    top: -deviceHeight/10,
     flexDirection: 'row', 
     padding: 20
   },
@@ -241,7 +243,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontFamily: 'Montserrat_400Regular',
 
-    top: -deviceHeight/5,
+    top: -deviceHeight/15,
+    //marginTop: 10,
     flexDirection: 'row',
   },
   textInput: {
@@ -274,16 +277,16 @@ const styles = StyleSheet.create({
     height: deviceHeight / 4.5,
      
     borderRadius: 30,
-    backgroundColor: '#F5F5DC',
+    backgroundColor: '#F1785D',
       
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 25,
   },
-
   buttonText: {
-    fontSize: 15,
+    fontSize: 20,
     fontFamily: 'Montserrat_400Regular',
+    color: '#F8D677',
     //paddingBottom: 2,
 
   },
@@ -291,9 +294,24 @@ const styles = StyleSheet.create({
     height: deviceHeight / 2.5,
     left: 0,
     right: 0,
-    top: -deviceHeight / 10,
+    top: -deviceHeight / 12,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  cart: {
+    width:deviceWidth / 1.10,
+    height: deviceHeight / 6,
+     
+    borderRadius: 30,
+    backgroundColor: '#F5F5DC',
+      
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: -deviceHeight / 25,
+    //marginTop: 25,
+  },
+  rowContainer: {
+    flexDirection:'row',
   },
 
   labelText: {
@@ -301,6 +319,7 @@ const styles = StyleSheet.create({
     color: '#F5F5DC',
     marginBottom: 10,
   },
+  
 
   
   
