@@ -126,7 +126,7 @@ pink-salmon: #F1785D
 */
 const styles = StyleSheet.create({
   textInputBox: {
-    height: 40,
+    height: deviceHeight/10,
     width: deviceWidth - 15,
     backgroundColor: '#F5F5DC',
     fontSize: 20,
@@ -140,7 +140,10 @@ const styles = StyleSheet.create({
   textInput: {
     opacity: 0.5,
     fontSize: 30,
+    width: deviceWidth - 15,
     fontFamily: 'Montserrat_400Regular',
+    paddingLeft:10,
+    textAlign: 'center'
 
   },
   container: {
