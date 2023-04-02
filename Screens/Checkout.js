@@ -141,8 +141,8 @@ const styles = StyleSheet.create({
     width: deviceWidth/3,
     backgroundColor: '#F5F5DC',
     borderRadius: 30,
-    left: -deviceWidth/3.5,
-    top: -deviceHeight/6.5,
+    //left: -deviceWidth/10,
+    //top: -deviceHeight/6.5,
     flexDirection: 'row',
     alignItems: 'center',
     textAlign: 'left',
@@ -184,7 +184,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems:'center',
     top: -deviceHeight/6,
-    flexDirection: 'row'   
+    flexDirection: 'row', 
+    padding: 20
   },
   pinkButton: {
     borderRadius: 15,
@@ -208,6 +209,11 @@ const styles = StyleSheet.create({
   smallIcon: {
     height: deviceHeight/20,
     width: deviceWidth/20,
+    resizeMode: 'contain',
+  },
+  tinyIcon: {
+    height: deviceHeight/25,
+    width: deviceWidth/25,
     resizeMode: 'contain',
   },
   image: {
