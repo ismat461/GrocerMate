@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CheckBox } from 'react-native-web';
 import {
   Text,
   View,
@@ -25,6 +26,8 @@ let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
 export default function Checkout({ navigation }) {
+  const [isChecked, setChecked] = React.useState(false)
+
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_500Medium,
@@ -37,6 +40,7 @@ export default function Checkout({ navigation }) {
   if (!fontsLoaded) {
     return null;
   }
+
 
   return (
     <View style={styles.container}>
@@ -70,8 +74,65 @@ export default function Checkout({ navigation }) {
 
       <NameInput></NameInput>
 
-      <View style = {styles.cart}>
 
+      {/*
+        <Checkbox
+          style={styles.checkbox}
+          value={isChecked}
+          onValueChange={setChecked}
+          color={isChecked ? '#4630EB' : undefined}
+        />
+
+        */}
+      <View style = {styles.cart}>
+        <View style={styles.columnContainer}>
+          <View style={styles.rowContainer}>
+            <Text style={styles.categoryText}>
+              Fruits & Vegetables
+            </Text>
+            <Image
+              source={require('/workspaces/GrocerMate/assets/Icons/pink-arrow.png')}
+              style={styles.tinyIcon}
+            />
+          </View>
+          <View style={styles.rowContainer}>
+            {/* <CheckBox
+              style={styles.checkbox}
+              value={isChecked}
+              onValueChange={setChecked}
+              //color={isChecked ? '#B4CC9B' : undefined}
+            />*/}
+            
+            <View style={styles.columnContainer}>
+              <View style={styles.rowContainer}>
+                <Text style={styles.itemText}>
+                    Honey Crisp
+                </Text>
+                <Image
+                  source={require('/workspaces/GrocerMate/assets/Icons/Apples/honey-crisp4.png')}
+                  style={styles.tinyIcon}
+                />
+              </View>
+              <View style={styles.rowContainer}>
+                  <View style={styles.columnContainer}>
+                    <Text>
+                      QTY
+                    </Text>
+                    <Text>
+                      4
+                    </Text>
+                  </View>
+                  <Text>
+                    $9.24
+                  </Text>
+              </View>
+            </View>
+            <Image
+              source={require('/workspaces/GrocerMate/assets/Icons/gold-garbage.png')}
+              style={styles.tinyIcon}
+            />  
+          </View>
+        </View>
       </View>
 
       <View style={styles.buttonContainer}>
@@ -136,6 +197,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat_400Regular',
     paddingLeft: 5,
     paddingRight: 25,
+  },
+  checkbox: {
+    margin: 8,
   },
   locationBar: {
     backgroundColor: '#285238',
@@ -228,7 +292,7 @@ const styles = StyleSheet.create({
     top: -deviceHeight/20,
     //backgroundColor: '#285238',
   },
-  titleText: {
+  itemText: {
     fontSize: 24,
     fontFamily: "Montserrat_400Regular"
   },
@@ -305,20 +369,28 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: '#F5F5DC',
       
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
     top: -deviceHeight / 25,
     //marginTop: 25,
   },
   rowContainer: {
     flexDirection:'row',
   },
-
+  columnContainer: {
+    flexDirection: 'column',
+  },
   labelText: {
     fontSize: 20,
     color: '#F5F5DC',
     marginBottom: 10,
   },
+  categoryText: {
+    fontFamily: 'Montserrat_700Bold',
+    color: "#F1785D",
+    fontSize:20,
+
+  }
   
 
   
