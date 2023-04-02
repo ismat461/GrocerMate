@@ -3,10 +3,12 @@ import {
   Text,
   View,
   StyleSheet,
+  ScrollView,
   Dimensions,
   Image,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  Alert
 } from 'react-native';
 import Constants from 'expo-constants';
 import {
@@ -59,14 +61,30 @@ export default function NewList({ navigation }) {
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>
-          Search By Category
-        </Text>
-      </View>
+      
 
       <NameInput></NameInput>
 
+      <View style = {styles.filterContainer}>
+        <Text style ={styles.filterText}>
+          Sort By:
+        </Text>
+        <TouchableOpacity 
+          style={styles.filterButton} onPress={() => Alert("placeholder")}
+          >
+            <Text style={styles.filterText}>
+              Price
+            </Text>
+            <Image
+            // /workspaces/GrocerMate/assets/Icons/house-icon-gold.png
+              source={require('/workspaces/GrocerMate/assets/Icons/pink-arrow.png')}
+              style={styles.tinyIcon}
+            />
+          </TouchableOpacity>
+      </View>
+      
+        
+      
       <View style={styles.buttonContainer}>
         <View style={styles.columnContainer}>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
@@ -75,6 +93,7 @@ export default function NewList({ navigation }) {
                   style={styles.image}
             />
                 <Text style={styles.buttonText}>Red Delicious</Text>
+                <Text style={styles.buttonText}>$1.92</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
@@ -82,6 +101,7 @@ export default function NewList({ navigation }) {
                   style={styles.image}
             />
                 <Text style={styles.buttonText}>Granny Smith</Text>
+                <Text style={styles.buttonText}>$2.42</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
@@ -89,6 +109,7 @@ export default function NewList({ navigation }) {
                   style={styles.image}
             />
                 <Text style={styles.buttonText}>Macintosh</Text>
+                <Text style={styles.buttonText}>$2.54</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.columnContainer}>
@@ -98,6 +119,7 @@ export default function NewList({ navigation }) {
                   style={styles.image}
             />
                 <Text style={styles.buttonText}>Honey Crisp</Text>
+                <Text style={styles.buttonText}>$2.31</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
@@ -105,6 +127,7 @@ export default function NewList({ navigation }) {
                   style={styles.image}
             />
                 <Text style={styles.buttonText}>Pink Lady</Text>
+                <Text style={styles.buttonText}>$2.53</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("CreateNewList")} style={styles.button} 
           activeOpacity={0.5}>
@@ -112,6 +135,7 @@ export default function NewList({ navigation }) {
                   style={styles.image}
             />
                 <Text style={styles.buttonText}>Gala</Text>
+                <Text style={styles.buttonText}>$2.61</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -135,7 +159,7 @@ class NameInput extends Component {
         />
       <Image
             source={require('/workspaces/GrocerMate/assets/Icons/gold-search.png')}
-            style={styles.smallIcon}
+            style={styles.largeIcon}
       />
       </View>
     );
@@ -185,6 +209,11 @@ const styles = StyleSheet.create({
     width: deviceWidth/20,
     resizeMode: 'contain',
   },
+  tinyIcon: {
+    height: deviceHeight/25,
+    width: deviceWidth/25,
+    resizeMode: 'contain',
+  },
   image: {
     height: deviceHeight/6,
     width:deviceWidth/3,
@@ -210,14 +239,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontFamily: 'Montserrat_400Regular',
 
-    top: -deviceHeight/5,
+    top: -deviceHeight/7,
     flexDirection: 'row',
   },
   textInput: {
     fontSize: 25,
     height: deviceHeight/15,
     width: deviceWidth/1.75,
-    textAlign: 'center',
+    //textAlign: 'center',
+    justifyContent:'flex-start',
     fontFamily: 'Montserrat_400Regular',
     color: '#374B4A',
     //backgroundColor: '#285238',
@@ -235,16 +265,12 @@ const styles = StyleSheet.create({
     top: -deviceHeight / 8,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    //alignItems: 'center',
     //backgroundColor: '#285238',
   },
   columnContainer: {
     flexDirection: 'column',
     justifyContent: 'space-between',
-    //top: deviceHeight/20,
-    //height: deviceHeight/2,
     width: deviceWidth/2.5,
-    //backgroundColor: "#F8D677",
   },
   button: {
     width:deviceWidth / 2.5,
@@ -266,13 +292,28 @@ const styles = StyleSheet.create({
   },
   filterButton: {
     backgroundColor: "#F8D677",
-    width: deviceWidth/3,
-    height: deviceHeight/4,
+    width: deviceWidth/3.5,
+    height: deviceHeight/20,
     borderRadius: 20,
     justifyContent: 'space-around',
+    alignItems:'center',
+    flexDirection:'row',
+    marginRight:20,
+    padding: 5,
   },
   filterText: {
     fontSize: 20,
     fontFamily: 'Montserrat_400Regular',
-  }
+    marginRight:10,
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    width: deviceWidth,
+    height: deviceHeight/25,
+    alignItems:'center',
+    justifyContent: 'flex-end',
+    //backgroundColor: '#285238',
+    top: -deviceHeight/9,
+  }, 
+
 });
