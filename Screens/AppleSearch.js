@@ -215,8 +215,8 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   image: {
-    height: deviceHeight/6,
-    width:deviceWidth/3,
+    height: deviceHeight/7,
+    width:deviceWidth/4,
   },
   titleContainer: {
     justifyContent: 'center',
