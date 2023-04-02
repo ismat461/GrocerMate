@@ -13,7 +13,7 @@ import Checkout from "./Screens/Checkout";
 
 
 // /workspaces/GrocerMate/Screens/HomeScreen.js
-
+// Sami
 const Stack = createNativeStackNavigator();
 
 export default function App() {
