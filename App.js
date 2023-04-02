@@ -13,7 +13,7 @@ import Checkout from "./Screens/Checkout";
 
 
 // /workspaces/GrocerMate/Screens/HomeScreen.js
-
+// TESTING
 const Stack = createNativeStackNavigator();
 
 export default function App() {
