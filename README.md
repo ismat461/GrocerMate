@@ -1,3 +1,0 @@
-# GrocerMate
-
-GrocerMate!
